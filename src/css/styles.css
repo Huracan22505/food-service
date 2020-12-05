@@ -197,6 +197,15 @@ body.dark-theme {
   border-radius: 2px;
   background-color: #3f51b5;
   color: #fff;
+
+  cursor: pointer;
+
+  transition: background-color 250ms var(--timing-function);
+}
+
+.tag-list__item:hover {
+  color: #333;
+  background-color: aqua;
 }
 
 .button {
