@@ -12,12 +12,11 @@ const refs = {
 
 themeChecker();
 
-refs.body.classList.add(Theme.LIGHT);
-
 refs.checkbox.addEventListener('change', onCheckboxChange);
 
 function onCheckboxChange(e) {
   refs.body.classList.toggle(Theme.DARK);
+  refs.body.classList.toggle(Theme.LIGHT);
 
   const condition = e.target.checked;
 
@@ -30,5 +29,7 @@ function themeChecker() {
   if (condition === 'true') {
     refs.body.classList.add(Theme.DARK);
     refs.checkbox.checked = true;
+  } else {
+    refs.body.classList.add(Theme.LIGHT);
   }
 }
