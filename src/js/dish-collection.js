@@ -2,6 +2,16 @@ import foodCardTpl from '../templates/food-card.hbs';
 import menu from '../data/menu.json';
 
 const menuContainer = document.querySelector('.js-menu');
+const filterButton = document.querySelector('.filter-button');
+
+filterButton.addEventListener('click', onFilterButtonClick);
+
+function onFilterButtonClick(e) {
+  menuContainer.innerHTML = '';
+
+  createMenuCardMarkup(menu);
+  menuContainer.insertAdjacentHTML('beforeend', cardMarkup);
+}
 
 let result = [];
 console.log('result', result);
