@@ -33,23 +33,17 @@ function onFilterButtonClick(e) {
     return;
   }
 
-  let result = [];
   const value = e.target.textContent;
+  let result = [];
 
   if (value === 'Все ингридиенты') {
     menuContainer.innerHTML = '';
     createMarkup(menu);
   } else {
-    menu.map(el => {
-      if (el.ingredients.includes(value)) {
-        result.push(el);
-      }
-    });
-
+    result = menu.filter(el => el.ingredients.includes(value));
     menuContainer.innerHTML = '';
-
     createMarkup(result);
-
-    result = [];
   }
+
+  result = [];
 }
